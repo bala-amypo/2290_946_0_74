@@ -22,8 +22,13 @@ public class Student{
     public String getEmail(){
         return email;
     }
-    public voide setEmail(){
+    public void setEmail(){
         this.email=email;
     }
-    
+    public float getcgpa(){
+        return cgpa;
+    }
+    public void setcgpa(){
+        this.cgpa=cgpa;
+    }
 }
