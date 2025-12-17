@@ -1,9 +1,24 @@
 package com.example.demo.service;
 
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.example.demo.entity.Student;
+import com.example.demo.repository.StudentRepository;
 
-public interface StudentService (
+@Service
+public class StudentService {
 
-Student createData(Student stu);
-List<Student> fetchRecord();
+    @Autowired
+    private StudentRepository repo;
+
+    public Student createData(Student stu) {
+        return repo.save(stu);
+    }
+
+    public List<Student> fetchRecord() {
+        return repo.findAll();
+    }
+}
